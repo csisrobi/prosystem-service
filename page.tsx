@@ -14,9 +14,9 @@ const links = [
   { name: "Kolbus", url: "http://www.kolbus.de" },
 ]
 
-export default function Home() {
+export default function Page() {
   return (
-    <main className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16">
       <Navigation />
 
       {/* Hero Section */}
@@ -159,7 +159,7 @@ export default function Home() {
           <p>© {new Date().getFullYear()} Prosystem Service SRL. Toate drepturile rezervate.</p>
         </div>
       </footer>
-    </main>
+    </div>
   )
 }
 
