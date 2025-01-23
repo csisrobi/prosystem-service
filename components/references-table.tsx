@@ -5,24 +5,22 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 
 const references = [
-  { company: "MEGAPRESS", location: "BUCUREȘTI" },
-  { company: "NOVIS", location: "CLUJ-NAPOCA" },
-  { company: "ARTA GRAFICA", location: "BUCUREȘTI" },
-  { company: "TRANSILVANIA PACK & PRINT", location: "SURA MICA/SIBIU" },
-  { company: "ART GROUP", location: "BUCUREȘTI" },
-  { company: "DELROTI & MULLER", location: "CLUJ-NAPOCA" },
+  { company: "MULTI-COLOR CORPORATION", location: "CLUJ-NAPOCA" },
+  { company: "TIPOGRAFIA ARTA", location: "CLUJ-NAPOCA" },
+  { company: "SEEN PRINT", location: "CLUJ-NAPOCA" },
+  { company: "POLIAM IMPORT EXPORT", location: "CLUJ-NAPOCA" },
+  { company: "STUDIO IMPRESS DESIGN", location: "CLUJ-NAPOCA" },
+  { company: "PGM LEVAND", location: "CLUJ-NAPOCA" },
+  { company: "IKORSOFT PRINTING", location: "CLUJ-NAPOCA" },
+  { company: "PERGAMON RD", location: "CLUJ-NAPOCA" },
+  { company: "PRINTMAN", location: "BUCUREȘTI" },
+  { company: "FLYERPRINT", location: "IAȘI" },
+  { company: "ASKA GRAFIKA", location: "SIGHETU MARMATIEI" },
   { company: "DISZ TIPO", location: "SĂCELE/BRAȘOV" },
-  { company: "DITOVIS", location: "CLUJ-NAPOCA" },
-  { company: "ROMSVER", location: "CLUJ-NAPOCA" },
-  { company: "GOERNER PACKAGING", location: "LUGOJ" },
-  { company: "MARELE ALB", location: "TURDA" },
-  { company: "ALBAPRINT", location: "PETREȘTI" },
-  { company: "LG PRODUCT", location: "BELGRAD/SERBIA" },
-  { company: "CORESI", location: "BUCUREȘTI" },
-]
+];
 
 export function ReferencesTable() {
   return (
@@ -42,6 +40,5 @@ export function ReferencesTable() {
         ))}
       </TableBody>
     </Table>
-  )
+  );
 }
-

@@ -1,19 +1,20 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { Toaster } from "@/components/ui/toaster"
-import './globals.css'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Toaster } from "@/components/ui/toaster";
+import "./globals.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Prosystem Service SRL',
-  description: 'Expertul dumneavoastră în echipamente tipografice și service profesional',
-}
+  title: "Prosystem Service",
+  description:
+    "Expertul dumneavoastră în echipamente tipografice și service profesional",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="ro">
@@ -22,6 +23,5 @@ export default function RootLayout({
         <Toaster />
       </body>
     </html>
-  )
+  );
 }
-
