@@ -6,15 +6,27 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { sendEmail } from "@/actions/send-email";
+import { Checkbox } from "@/components/ui/checkbox";
+import Link from "next/link";
 
 export function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [agreed, setAgreed] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!agreed) {
+      toast({
+        title: "Eroare",
+        description:
+          "Trebuie să fiți de acord cu politica GDPR pentru a trimite mesajul.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     try {
       await sendEmail({ name, email, message });
@@ -63,6 +75,22 @@ export function ContactForm() {
           onChange={(e) => setMessage(e.target.value)}
           required
         />
+      </div>
+      <div className="flex items-center space-x-2">
+        <Checkbox
+          id="gdpr"
+          checked={agreed}
+          onCheckedChange={(checked) => setAgreed(checked === true)}
+        />
+        <label
+          htmlFor="gdpr"
+          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          Sunt de acord cu{" "}
+          <Link href="/gdpr" className="text-primary hover:underline">
+            politica GDPR
+          </Link>
+        </label>
       </div>
       <Button type="submit">Trimite mesajul</Button>
     </form>
